@@ -23,7 +23,8 @@ export const projects: Project[] = [
       "High-fidelity checkout flow",
     ],
     tech: ["Next.js", "Tailwind", "Framer Motion", "Stripe"],
-    image: "/projects/luxe-commerce.jpg",
+    image:
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1800&q=80",
     accent: "#c9a962",
   },
   {
@@ -39,7 +40,8 @@ export const projects: Project[] = [
       "Customizable boards & views",
     ],
     tech: ["React", "Node", "PostgreSQL", "WebSockets"],
-    image: "/projects/studio-flow.jpg",
+    image:
+      "https://images.unsplash.com/photo-1556155092-8707de31f9c4?auto=format&fit=crop&w=1800&q=80",
     accent: "#6ee7b7",
   },
   {
@@ -55,7 +57,8 @@ export const projects: Project[] = [
       "Sticky CTA & lead capture",
     ],
     tech: ["Next.js", "Tailwind", "Framer Motion", "Vercel"],
-    image: "/projects/nova-landing.jpg",
+    image:
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1800&q=80",
     accent: "#a78bfa",
   },
 ];

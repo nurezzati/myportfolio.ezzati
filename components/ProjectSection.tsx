@@ -3,6 +3,7 @@
 import { motion, useScroll } from "framer-motion";
 import { projects } from "@/constants/projects";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import { useRef } from "react";
 
 function ProjectCard({
@@ -26,12 +27,21 @@ function ProjectCard({
         whileHover={{ scale: 1.01 }}
         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
       >
+        <Image
+          src={project.image}
+          alt={`${project.title} preview`}
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+          sizes="(min-width: 1024px) 60vw, 100vw"
+          priority={index === 0}
+        />
+        {/* Soft tint + readability overlay */}
         <div
-          className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
+          className="absolute inset-0"
           style={{
             background: project.accent
-              ? `linear-gradient(135deg, ${project.accent}18 0%, transparent 45%), linear-gradient(160deg, #1c1c1e 0%, #0f0f10 100%)`
-              : "linear-gradient(160deg, #1c1c1e 0%, #0f0f10 100%)",
+              ? `linear-gradient(135deg, ${project.accent}26 0%, rgba(10,10,11,0.35) 55%), linear-gradient(180deg, rgba(10,10,11,0.15) 0%, rgba(10,10,11,0.65) 100%)`
+              : "linear-gradient(180deg, rgba(10,10,11,0.15) 0%, rgba(10,10,11,0.65) 100%)",
           }}
         />
         <div className="absolute inset-0 flex items-center justify-center">
