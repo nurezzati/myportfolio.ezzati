@@ -1,20 +1,27 @@
 import type { Metadata } from "next";
-import { Syne, Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, Outfit, Syne } from "next/font/google";
 import "./globals.css";
 
-const syne = Syne({
-  variable: "--font-syne",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
+  weight: ["500", "600", "700"],
+});
+
+const syne = Syne({
+  variable: "--font-hero",
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-  title: "Ezzati — Freelance Front-End Engineer",
+  title: "Nur Ezzati — Freelance Front-End Engineer",
   description:
     "I transform bold ideas into high-performance digital reality. UI/UX implementation, performance optimization, custom animations.",
 };
@@ -27,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${syne.variable} ${inter.variable} font-sans antialiased`}
+        className={`${jakarta.variable} ${outfit.variable} ${syne.variable} font-sans antialiased`}
       >
         {children}
       </body>
