@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import ProjectSection from "@/components/ProjectSection";
-import { Palette, Zap, Sparkles, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const fadeUp = {
   initial: { opacity: 0, y: 28 },
@@ -17,29 +17,6 @@ const stagger = {
   },
 };
 
-const services = [
-  {
-    title: "UI/UX Implementation",
-    description:
-      "Pixel-perfect interfaces from Figma to production with attention to spacing, typography, and interaction states.",
-    icon: Palette,
-    size: "default" as const,
-  },
-  {
-    title: "Performance Optimization",
-    description:
-      "Fast loads, smooth scrolls, and minimal layout shift. Core Web Vitals and bundle size in mind.",
-    icon: Zap,
-    size: "default" as const,
-  },
-  {
-    title: "Custom Animations",
-    description:
-      "Scroll-driven motion, micro-interactions, and branded transitions that feel intentional and polished.",
-    icon: Sparkles,
-    size: "wide" as const,
-  },
-];
 
 export default function Home() {
   return (
@@ -97,56 +74,6 @@ export default function Home() {
             </motion.a>
           </motion.div>
         </motion.div>
-      </section>
-
-      {/* Services — Bento-style */}
-      <section className="relative border-t border-[var(--border)] bg-[var(--surface)]/80 py-24 backdrop-blur-sm lg:py-32">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <motion.header
-            className="mb-14"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-white/40">
-              What I do
-            </p>
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Services
-            </h2>
-          </motion.header>
-
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, i) => (
-              <motion.article
-                key={service.title}
-                className={`group relative overflow-hidden rounded-2xl border border-[var(--border)] bg-white/[0.02] p-6 transition-all duration-300 hover:border-[var(--border-hover)] hover:bg-white/[0.04] ${
-                  service.size === "wide" ? "sm:col-span-2 lg:col-span-1" : ""
-                }`}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{
-                  duration: 0.5,
-                  delay: i * 0.08,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                whileHover={{ y: -2 }}
-              >
-                <div className="mb-5 inline-flex rounded-xl bg-[var(--accent-soft)] p-3">
-                  <service.icon className="h-5 w-5 text-indigo-400" />
-                </div>
-                <h3 className="mb-2 text-lg font-semibold text-white">
-                  {service.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-white/55">
-                  {service.description}
-                </p>
-              </motion.article>
-            ))}
-          </div>
-        </div>
       </section>
 
       <ProjectSection />
